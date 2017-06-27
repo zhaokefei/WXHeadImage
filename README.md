@@ -1,5 +1,13 @@
 # 基于微信好友头像合成自己的微信头像
 
+## 成果展示
+
+![image_1](head_image/image_one.jpg)
+
+<br/>
+
+![image_2](head_image/image_two.jpg)
+
 ## 使用的库
 
 - itchat (登录微信获取数据)

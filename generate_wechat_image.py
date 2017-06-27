@@ -58,7 +58,6 @@ def generate_image(path, gen_filename='multi_img', row_num=10):
                 thum_im = im.resize(thum_size, Image.ANTIALIAS)
             else:
                 thum_im = im
-            print('x: {}; y: {}'.format(x * slide_size, y * slide_size))
             toImage.paste(thum_im, (x * slide_size, y * slide_size))
             x += 1
             if x == row_num:
