@@ -2,6 +2,8 @@
 
 import re
 import os
+import math
+import uuid
 
 import itchat
 from PIL import Image
@@ -27,8 +29,9 @@ def get_friend_imgs(save_path, get_img_nums=100):
             break
 
 
-def generate_image(path, gen_filename='multi_img', row_num=10):
+def generate_image(path, gen_filename='multi_img'):
     images = os.listdir(path)
+    row_num = int(math.sqrt(len(images)))
     slide_size = int(640/row_num)
     thum_size = (slide_size, slide_size)
     toImage = Image.new('RGBA', (640, 640))
@@ -60,6 +63,6 @@ def generate_image(path, gen_filename='multi_img', row_num=10):
 
 if __name__ == '__main__':
     itchat.auto_login()
-    path = 'friend_kefei'
+    path = str(uuid.uuid4())
     get_friend_imgs(path)
     generate_image(path)
